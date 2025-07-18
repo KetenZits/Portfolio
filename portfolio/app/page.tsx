@@ -12,7 +12,7 @@ import Squares from "@/components/Squares";
 
 export default function Home() {
   return (
-    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10 h-[70dvh]">
+    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10 h-[70vh]">
       <div className="absolute w-full h-full top-0 left-0">
       <Squares 
         speed={0.5} 
@@ -21,7 +21,7 @@ export default function Home() {
         borderColor='#212121'
         />
       </div>
-      <div className="inline-block max-w-xl text-center justify-center z-100">
+      <div className="inline-block max-w-xl text-center justify-center z-1">
         <span className={title()}>This my&nbsp;</span>
         <span className={title({ color: "violet" })}>Website&nbsp;</span>
         <br />
@@ -29,7 +29,7 @@ export default function Home() {
           Welcome to my <span className={title({ color: "violet" })}>Portfolio</span>
         </span>
       </div>
-      <div className="my-5 z-100">
+      <div className="my-5 z-1">
         <div className="inline-block max-w-xl text-center justify-center text-2xl font-bold text-white">
           I'm a
           <RotatingText
