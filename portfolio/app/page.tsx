@@ -9,11 +9,13 @@ import { GithubIcon } from "@/components/icons";
 import RotatingText from '@/components/RotatingText'
 import TiltedCard from "@/components/TiltedCard";
 import Squares from "@/components/Squares";
+import Aurora from "@/components/Aurora";
 
 export default function Home() {
   return (
-    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10 h-[70vh]">
-      <div className="absolute w-full h-full top-0 left-0">
+    <>
+    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10 h-screen  border-5 border-red-600">
+      <div className="absolute w-full h-[100vh] top-0 left-0">
       <Squares 
         speed={0.5} 
         squareSize={40}
@@ -48,8 +50,8 @@ export default function Home() {
       </div>
       <TiltedCard
         imageSrc="/img/main1x1.jpg"
-        altText="Kendrick Lamar - GNX Album Cover"
-        captionText="Kendrick Lamar - GNX"
+        altText="Thanapon Khawkumkrong - Dev"
+        captionText="Thanapon Khawkumkrong - Dev"
         containerHeight="300px"
         containerWidth="300px"
         imageHeight="300px"
@@ -68,5 +70,6 @@ export default function Home() {
         }
       />
     </section>
+    </>
   );
 }
