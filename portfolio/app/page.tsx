@@ -14,7 +14,7 @@ import Aurora from "@/components/Aurora";
 export default function Home() {
   return (
     <>
-    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10 h-screen  border-5 border-red-600">
+    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10 h-[70vh]">
       <div className="absolute w-full h-[100vh] top-0 left-0">
       <Squares 
         speed={0.5} 

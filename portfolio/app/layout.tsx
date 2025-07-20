@@ -34,11 +34,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
+    
     <html suppressHydrationWarning lang="en">
       <head />
       <body
         className={clsx(
-          "text-foreground bg-background font-sans antialiased ",
+          "text-foreground bg-background font-sans antialiased overflow-y-scroll",
           fontSans.variable,
         )}
       >
