@@ -39,14 +39,14 @@ export default function RootLayout({
       <head />
       <body
         className={clsx(
-          "text-foreground bg-background font-sans antialiased overflow-y-scroll",
+          "text-foreground font-sans antialiased overflow-y-scroll",
           fontSans.variable,
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="flex flex-col">
             <CustomNavbar/>
-            <main className="container mx-auto px-6 ">
+            <main className="">
               {children}
             </main>
             {/* <footer className="w-full flex items-center justify-center py-3">

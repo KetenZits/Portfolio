@@ -1,30 +1,29 @@
-import { Link } from "@heroui/link";
-import { Snippet } from "@heroui/snippet";
-import { Code } from "@heroui/code";
-import { button as buttonStyles } from "@heroui/theme";
-import Card  from "@/components/Card";
-import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
+import { title } from "@/components/primitives";
 import RotatingText from '@/components/RotatingText'
 import TiltedCard from "@/components/TiltedCard";
-import Squares from "@/components/Squares";
-import Aurora from "@/components/Aurora";
+import TextType from "@/components/TextType";
+import Particles from "@/components/Particles";
+import {Code} from "@heroui/react";
+import Magnet from "@/components/Magnet";
 
 export default function Home() {
   return (
     <>
-    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10 h-[70vh]">
-      <div className="absolute w-full h-[100vh] top-0 left-0">
-      <Squares 
-        speed={0.5} 
-        squareSize={40}
-        direction='diagonal' // up, down, left, right, diagonal
-        borderColor='#212121'
+    <div style={{ width: '100%', height: '100%', position: 'absolute' }}>
+        <Particles
+          particleColors={['#ffffff', '#8800C9']}
+          particleCount={1000}
+          particleSpread={50}
+          speed={0.1}
+          particleBaseSize={100}
+          moveParticlesOnHover={true}
+          alphaParticles={false}
+          disableRotation={false}
         />
       </div>
-      <div className="inline-block max-w-xl text-center justify-center z-1">
-        <span className={title()}>This my&nbsp;</span>
+    <section className="relative flex flex-col items-center justify-center gap-4 md:py-10 h-screen container mx-auto" id="home">
+      <div className="inline-block max-w-xl text-center justify-center">
+        <span className={title()}>This's my&nbsp;</span>
         <span className={title({ color: "violet" })}>Website&nbsp;</span>
         <br />
         <span className={title()}>
@@ -69,6 +68,21 @@ export default function Home() {
           </div>
         }
       />
+    </section>
+    <section className="flex flex-col items-center justify-center gap-4 md:py-10 h-screen bg-[linear-gradient(to_bottom,_#000000,_#0E0021,_#000000)]">
+      <div className="container mx-auto text-center z-50 flex flex-col items-center justify-center">
+        <TextType 
+          text={["WELCOME TO", "MY STACK", "OF TECHNOLOGIES"]}
+          typingSpeed={75}
+          pauseDuration={1500}
+          showCursor={true}
+          cursorCharacter="_"
+          className="text-4xl sm:text-4xl md:text-6xl font-bold text-white text-center"
+        />
+        <Magnet padding={50} disabled={false} magnetStrength={10}>
+          <Code color="secondary" className="ring-purple-400 ring-1 text-sm md:text-md my-5 font-semibold bg-gradient-to-r from-pink-600 via-fuchsia-500 to-violet-600 bg-clip-text text-transparent">✨ ALL LANGUAGES AND FRAMEWORK I USE</Code>
+        </Magnet>
+      </div>
     </section>
     </>
   );
