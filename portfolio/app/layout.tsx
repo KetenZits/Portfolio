@@ -12,12 +12,12 @@ import CustomNavbar from "@/components/CustomNavbar";
 
 export const metadata: Metadata = {
   title: {
-    default: siteConfig.name,
+    default: "Portfolio TK",
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
   icons: {
-    icon: "/favicon.ico",
+    icon: "/logotk.png",
   },
 };
 
