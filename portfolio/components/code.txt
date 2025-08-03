@@ -4,3 +4,10 @@ ALL LANGUAGES AND FRAMWORK I USE
 HTML CSS Javascript Reactjs Nextjs Tailwind DaisyUI Typescript php laravel prisma MySQL postgreSQL 
 
 grid grid-cols-7 grid-rows-5 gap-4
+
+const projectlist = [
+    {tiltedimg: "#", name1: "", count: "", name2: "", detail: ""},
+    {tiltedimg: "#", name1: "", count: "", name2: "", detail: ""},
+    {tiltedimg: "#", name1: "", count: "", name2: "", detail: ""},
+];
+
