@@ -11,9 +11,9 @@ import Link from "next/link";
 export default function Home() {
 
     const projectlist = [
-        {tiltedimg: "#", name1: "", count: "", name2: "", detail: ""},
-        {tiltedimg: "#", name1: "", count: "", name2: "", detail: ""},
-        {tiltedimg: "#", name1: "", count: "", name2: "", detail: ""},
+        {tiltedimg: "#", name1: "", count: "", name2: "", detail: "", stack: ['Blade', 'Tailwind', 'DaisyUI', 'PHP', 'Laravel', 'MySQL', 'GSAP']},
+        {tiltedimg: "#", name1: "", count: "", name2: "", detail: "", stack: []},
+        {tiltedimg: "#", name1: "", count: "", name2: "", detail: "", stack: []},
     ];
 
   return (
@@ -210,42 +210,109 @@ export default function Home() {
         </Magnet>
         <div className="flex flex-col my-5">
           {/* ------------------ */}
-          <div className="flex flex-row flex-wrap gap-10 bg-gradient-to-r from-pink-600/10 via-fuchsia-500/10 to-violet-600/10 py-10 px-8 ring-2 ring-white/20 rounded-2xl shadow-lg">
-            <TiltedCard
-              imageSrc="/project/project1.png"
-              altText="Thanapon Khawkumkrong - Dev"
-              captionText="Thanapon Khawkumkrong - Dev"
-              containerHeight="300px"
-              containerWidth="575px"
-              imageHeight="300px"
-              imageWidth="575px"
-              rotateAmplitude={8}
-              scaleOnHover={1.07}
-              showMobileWarning={false}
-              showTooltip={true}
-              displayOverlayContent={true}
-              overlayContent={
-                <div className="backdrop-blur-lg bg-white/50 ring-2 ring-gray-800/50 py-1.5 px-2 rounded-xl shadow-lg relative top-5 left-3">
-                  <h1 className="text-[16px] font-bold bg-gradient-to-r from-pink-600 via-fuchsia-500 to-violet-600 bg-clip-text text-transparent transition-all duration-300">
-                    NBAC REPAIR SYSTEM ✨
-                  </h1>
+          <div className="flex flex-col lg:flex-row lg:flex-wrap justify-center items-center lg:items-start gap-6 lg:gap-10 bg-gradient-to-r from-pink-600/10 via-fuchsia-500/10 to-violet-600/10 py-6 lg:py-10 px-4 lg:px-8 ring-2 ring-white/20 rounded-2xl shadow-lg">
+            <div className="relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-black/40 to-pink-900/20 backdrop-blur-sm"></div>
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-pink-500/10"></div>
+              
+              <div className="relative flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12 p-6 lg:p-10 border border-white/10 rounded-3xl shadow-2xl backdrop-blur-lg hover:border-purple-500/30 transition-all duration-500 group">
+                
+                <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                  <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-purple-400/30 rounded-full animate-pulse"></div>
+                  <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-pink-400/40 rounded-full animate-bounce"></div>
+                  <div className="absolute top-1/2 right-1/3 w-1.5 h-1.5 bg-purple-300/20 rounded-full animate-pulse delay-1000"></div>
                 </div>
-              }
-            />
-            <div className="flex flex-col items-start justify-center">
-              <span className={title({ color: "violet" })}>{"{"}PROJECT 1{"};"}&nbsp;</span>
-              <span className={title({ color: "blue" })}>NBAC Repair System&nbsp;</span>
-              <p className="mt-5 text-start text-sm font-normal w-100 bg-gradient-to-br from-cyan-600 via-teal-500 to-green-600 bg-clip-text text-transparent">
-                NBAC Repair System is a system developed for reporting computer repairs when damage occurs or when it's necessary to inspect the condition of individual computers in an organized manner. The system focuses on convenience, speed, and efficiency in managing computer equipment issues within the organization.</p>
-              <Link
-              href="#contact"
-              className="mt-5 bg-gradient-to-br from-purple-600 to-indigo-700 hover:from-purple-500 hover:to-indigo-600 text-white px-4 py-2 rounded-2xl shadow-[0_3px_24px_rgba(147,51,234,0.4)] hover:scale-105 transition font-medium flex justify-center items-center gap-2"
-            >
-              Source
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
+
+                <div className="relative flex-shrink-0 w-full flex justify-center items-center lg:basis-[320px]">
+                  <div className="absolute bg-gradient-to-r from-purple-600/20 to-pink-600/20 blur-xl rounded-2xl w-[300px] h-[300px] lg:w-[340px] lg:h-[340px] group-hover:scale-110 transition-transform duration-700"></div>
+                  
+                  <div className="relative">
+                    <TiltedCard
+                      imageSrc="/project/project1.png"
+                      altText="Thanapon Khawkumkrong - Dev"
+                      captionText="Thanapon Khawkumkrong - Dev"
+                      containerHeight="280px"
+                      containerWidth="280px"
+                      imageHeight="280px"
+                      imageWidth="280px"
+                      className="lg:!h-[320px] lg:!w-[300px] shadow-2xl"
+                      rotateAmplitude={8}
+                      scaleOnHover={1.08}
+                      showMobileWarning={false}
+                      showTooltip={true}
+                      displayOverlayContent={true}
+                      overlayContent={
+                        <div className="backdrop-blur-lg bg-gradient-to-r from-purple-900/80 to-pink-900/80 border border-purple-400/30 py-2 px-3 rounded-2xl shadow-xl relative top-4 lg:top-6 left-3 lg:left-4 transform hover:scale-105 transition-all duration-300">
+                          <h1 className="text-sm lg:text-base font-bold bg-gradient-to-r from-purple-200 via-pink-200 to-purple-200 bg-clip-text text-transparent">
+                            NBAC REPAIR SYSTEM ✨
+                          </h1>
+                        </div>
+                      }
+                    />
+                  </div>
+                </div>
+
+                {/* Content Section */}
+                <div className="flex flex-col items-center lg:items-start text-center lg:text-left flex-1 min-w-0 max-w-full lg:max-w-2xl space-y-6">
+                  
+                  {/* Title Section */}
+                  <div className="space-y-2">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-purple-500/10 border border-purple-500/20 rounded-full mb-4">
+                      <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+                      <span className="text-xs sm:text-sm md:text-sm text-purple-300 font-medium">FEATURED PROJECT</span>
+                    </div>
+                    
+                    <div className="space-y-1">
+                      <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent tracking-tight">
+                        {"{"}PROJECT 1{"};"}
+                      </span>
+                      <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-pink-300 to-purple-300 bg-clip-text text-transparent">
+                        NBAC Repair System
+                      </span>
+                    </div>
+                  </div>
+                  <div className="relative">
+                    <div className="absolute -left-2 top-0 w-1 h-full bg-gradient-to-b from-purple-500 to-pink-500 rounded-full opacity-30"></div>
+                    
+                    <p className="text-xs sm:text-sm md:text-base lg:text-base font-normal leading-relaxed text-gray-300 pl-6 lg:pl-8 relative z-10">
+                      A sophisticated system engineered for seamless computer repair reporting and equipment condition monitoring. 
+                      <span className="text-purple-300 font-medium"> Built with modern tech stack</span>, focusing on 
+                      <span className="text-pink-300 font-medium"> convenience, speed, and operational efficiency</span> 
+                      within organizational infrastructure.
+                    </p>
+                  </div>
+
+                  {/* Tech Stack Tags */}
+                  <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
+                    {['Blade', 'Tailwind', 'DaisyUI', 'PHP', 'Laravel', 'MySQL', 'GSAP'].map((tech, index) => (
+                      <span key={tech} className="px-3 py-1 text-xs font-medium bg-gray-800/50 border border-purple-500/20 text-purple-200 rounded-full hover:bg-purple-500/10 transition-colors duration-300">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+                    <Link
+                      href="#contact"
+                      className="group relative px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white rounded-2xl shadow-lg hover:shadow-purple-500/25 transform hover:scale-105 transition-all duration-300 font-semibold flex justify-center items-center gap-2 text-sm lg:text-base overflow-hidden"
+                    >
+                      
+                      <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <span className="relative z-10 text-sm md:text-base">View Source</span>
+                      <svg className="relative z-10 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </Link>
+                    
+                    <button className="px-6 py-3 bg-transparent border border-purple-500/30 text-purple-300 hover:bg-purple-500/10 hover:border-purple-400/50 rounded-2xl transition-all duration-300 font-medium flex justify-center items-center gap-2 text-sm md:text-base group">
+                      <span>Live Demo</span>
+                      <svg className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           {/* ------------------ */}    
