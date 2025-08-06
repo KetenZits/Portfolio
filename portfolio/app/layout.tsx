@@ -8,6 +8,7 @@ import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import CustomNavbar from "@/components/CustomNavbar";
+import { Github, Facebook, Instagram, Mail } from 'lucide-react';
 
 
 export const metadata: Metadata = {
@@ -33,6 +34,33 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
+  const socialLinks = [
+    {
+      name: 'GitHub',
+      icon: Github,
+      url: 'https://github.com/yourusername',
+      hoverColor: 'hover:text-purple-400'
+    },
+    {
+      name: 'Facebook',
+      icon: Facebook,
+      url: 'https://facebook.com/yourprofile',
+      hoverColor: 'hover:text-purple-400'
+    },
+    {
+      name: 'Instagram',
+      icon: Instagram,
+      url: 'https://instagram.com/yourusername',
+      hoverColor: 'hover:text-purple-400'
+    },
+    {
+      name: 'Email',
+      icon: Mail,
+      url: 'mailto:your.email@example.com',
+      hoverColor: 'hover:text-purple-400'
+    }
+  ];
   return (
     
     <html suppressHydrationWarning lang="en">
@@ -49,17 +77,33 @@ export default function RootLayout({
             <main className="">
               {children}
             </main>
-            {/* <footer className="w-full flex items-center justify-center py-3">
-              <Link
-                isExternal
-                className="flex items-center gap-1 text-current"
-                href="https://heroui.com?utm_source=next-app-template"
-                title="heroui.com homepage"
-              >
-                <span className="text-default-600">Powered by</span>
-                <p className="text-primary">HeroUI</p>
-              </Link>
-            </footer> */}
+            <footer className="w-full bg-black/60 backdrop-blur-md border-t border-purple-500/20">
+              <div className="container mx-auto px-6 py-8">
+                <div className="flex justify-center items-center gap-6 mb-6">
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.name}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`p-3 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 transition-all duration-300 hover:bg-purple-500/20 hover:border-purple-400/40 hover:scale-110 ${social.hoverColor} text-white/70`}
+                      title={social.name}
+                    >
+                      <social.icon size={20} />
+                    </a>
+                  ))}
+                </div>
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent mb-6"></div>
+                <div className="text-center">
+                  <p className="text-purple-300 font-semibold mb-2">
+                    © 2025 Thanapon Khawkumkrong
+                  </p>
+                  <p className="text-white/50 text-sm">
+                    Welcome To my Portfolio Website
+                  </p>
+                </div>
+              </div>
+            </footer>
           </div>
         </Providers>
       </body>

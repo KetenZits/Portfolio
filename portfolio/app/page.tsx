@@ -7,6 +7,7 @@ import {Code} from "@heroui/react";
 import Magnet from "@/components/Magnet";
 import {Card, CardHeader, CardBody, Image} from "@heroui/react";
 import Link from "next/link";
+import { Github, Facebook, Instagram, Mail, ExternalLink } from 'lucide-react';
 
 export default function Home() {
 
@@ -24,6 +25,36 @@ export default function Home() {
           stack: ['Next.js', 'Tailwind', 'DaisyUI']
         },
     ];
+    const socialLinks = [
+    {
+      name: 'GitHub',
+      icon: Github,
+      url: 'https://github.com/KetenZits', 
+      color: 'hover:text-gray-300',
+      description: 'Check out my code'
+    },
+    {
+      name: 'Facebook',
+      icon: Facebook,
+      url: 'https://www.facebook.com/first.t.thanapon.n?locale=th_TH',
+      color: 'hover:text-blue-400',
+      description: 'Connect on Facebook'
+    },
+    {
+      name: 'Instagram',
+      icon: Instagram,
+      url: 'https://www.instagram.com/karasumi_zz/',
+      color: 'hover:text-pink-400',
+      description: 'Follow my journey'
+    },
+    {
+      name: 'Email',
+      icon: Mail,
+      url: 'firstthanapon2@gmail.com', 
+      color: 'hover:text-green-400',
+      description: 'Send me a message'
+    }
+  ];
 
   return (
     <>
@@ -317,6 +348,52 @@ export default function Home() {
           ))}
         </div>
         </div>
+    </section>
+    <section className="flex flex-col items-center justify-center gap-4 md:py-10 h-screen bg-[linear-gradient(to_bottom,_#000000,_#190021,_#000000)]" id="contact">
+      <div className="container mx-auto text-center z-50 flex flex-col items-center justify-center">
+        <TextType 
+          text={["CONTACT ME", "LET'S CONNECT"]}
+          typingSpeed={75}
+          pauseDuration={1500}
+          showCursor={true}
+          cursorCharacter="_"
+          className="text-4xl sm:text-4xl md:text-6xl font-bold text-white text-center mb-8"
+        />
+        
+        <Magnet padding={50} disabled={false} magnetStrength={10}>
+          <Code color="secondary" className="ring-purple-400 ring-1 text-sm md:text-md my-5 font-semibold bg-gradient-to-r from-pink-600 via-fuchsia-500 to-violet-600 bg-clip-text text-transparent">
+            📫 FEEL FREE TO REACH OUT
+          </Code>
+        </Magnet>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+          {socialLinks.map((social) => (
+            <a
+              key={social.name}
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`group relative flex flex-col items-center justify-center p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 transition-all duration-300 hover:bg-white/10 hover:border-white/20 hover:scale-105 ${social.color}`}
+            >
+              <social.icon size={40} className="mb-3 transition-all duration-300 group-hover:scale-110" />
+              <span className="text-white font-semibold mb-1">{social.name}</span>
+              <span className="text-white/60 text-xs text-center">{social.description}</span>
+              <ExternalLink size={14} className="absolute top-2 right-2 opacity-0 group-hover:opacity-60 transition-opacity duration-300" />
+            </a>
+          ))}
+        </div>
+
+        <div className="mt-12 flex items-center justify-center">
+          <div className="w-32 h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-50"></div>
+          <span className="mx-4 text-white/40 text-sm">◦</span>
+          <div className="w-32 h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-50"></div>
+        </div>
+        
+        <p className="text-white/60 text-sm mt-4 max-w-md">
+          I'm always excited to collaborate on new projects or discuss opportunities. 
+          Don't hesitate to reach out through any of these platforms!
+        </p>
+      </div>
     </section>
     </>
   );
