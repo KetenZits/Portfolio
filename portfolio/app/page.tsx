@@ -11,9 +11,18 @@ import Link from "next/link";
 export default function Home() {
 
     const projectlist = [
-        {tiltedimg: "#", name1: "", count: "", name2: "", detail: "", stack: ['Blade', 'Tailwind', 'DaisyUI', 'PHP', 'Laravel', 'MySQL', 'GSAP']},
-        {tiltedimg: "#", name1: "", count: "", name2: "", detail: "", stack: []},
-        {tiltedimg: "#", name1: "", count: "", name2: "", detail: "", stack: []},
+        {tiltedimg: "/project/project1.png", name1: "NBAC Repair System ✨", count: "PROJECT 1", name2: "NBAC Repair System", 
+          detail: "A comprehensive internal repair reporting platform tailored for organizational IT and electronic equipment maintenance. The system features an intuitive Admin Dashboard for efficient case management, along with data export capabilities in Excel format to support external workflows and reporting needs. Developed to enhance transparency, traceability, and operational flow in handling hardware-related issues within an organization.", 
+          stack: ['Blade', 'Tailwind', 'DaisyUI', 'PHP', 'Laravel', 'MySQL', 'GSAP']
+        },
+        {tiltedimg: "/project/project2.png", name1: "CRUD With Typescript 💫", count: "PROJECT 2", name2: "CRUD With Typescript", 
+          detail: "A modern web application built to explore and master full-stack development with TypeScript. The project utilizes Prisma ORM with PostgreSQL for database management, integrated seamlessly into a Next.js framework. Designed as a learning platform to understand advanced JavaScript concepts, including React hooks and efficient state management, delivering a scalable and maintainable CRUD system.", 
+          stack: ['Next.js', 'Typescript', 'Tailwind', 'Prisma', 'PostgreSQL']
+        },
+        {tiltedimg: "/project/project3.png", name1: "School Website 🌟", count: "PROJECT 3", name2: "School Website", 
+          detail: "A responsive and modern school website developed with Next.js, crafted to replace the institution's outdated platform. This project demonstrates practical implementation of modern frontend technologies, focusing on clean UI/UX, performance optimization, and mobile-first design. Built as a contribution to the school community, while deepening hands-on experience with React and web development best practices.", 
+          stack: ['Next.js', 'Tailwind', 'DaisyUI']
+        },
     ];
 
   return (
@@ -195,10 +204,10 @@ export default function Home() {
           disableRotation={false}
         />
       </div>
-    <section className="mt-3 flex flex-col items-center justify-center gap-4 md:py-10 h-screen bg-black" id="project">
+    <section className="mt-3 flex flex-col items-center justify-center gap-4 md:py-10 h-auto bg-black" id="project">
         <div className="container mx-auto text-center z-50 flex flex-col items-center justify-center">
           <TextType 
-          text={["MY ALL PROJECTS"]}
+          text={["MY ALL", "PROJECTS"]}
           typingSpeed={75}
           pauseDuration={1500}
           showCursor={true}
@@ -209,8 +218,8 @@ export default function Home() {
           <Code color="secondary" className="ring-purple-400 ring-1 text-sm md:text-md my-5 font-semibold bg-gradient-to-r from-pink-600 via-fuchsia-500 to-violet-600 bg-clip-text text-transparent">💫 ALL OF MY PROJECTS I DO</Code>
         </Magnet>
         <div className="flex flex-col my-5">
-          {/* ------------------ */}
-          <div className="flex flex-col lg:flex-row lg:flex-wrap justify-center items-center lg:items-start gap-6 lg:gap-10 bg-gradient-to-r from-pink-600/10 via-fuchsia-500/10 to-violet-600/10 py-6 lg:py-10 px-4 lg:px-8 ring-2 ring-white/20 rounded-2xl shadow-lg">
+          {projectlist.map((project, index) => (
+            <div key={index} className="flex my-3 flex-col lg:flex-row lg:flex-wrap justify-center items-center lg:items-start gap-6 lg:gap-10 bg-gradient-to-r from-pink-600/10 via-fuchsia-500/10 to-violet-600/10 py-6 lg:py-10 px-4 lg:px-8 ring-2 ring-white/20 rounded-2xl shadow-lg">
             <div className="relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-black/40 to-pink-900/20 backdrop-blur-sm"></div>
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-pink-500/10"></div>
@@ -228,14 +237,14 @@ export default function Home() {
                   
                   <div className="relative">
                     <TiltedCard
-                      imageSrc="/project/project1.png"
+                      key={index}
+                      imageSrc={project.tiltedimg}
                       altText="Thanapon Khawkumkrong - Dev"
                       captionText="Thanapon Khawkumkrong - Dev"
                       containerHeight="280px"
                       containerWidth="280px"
                       imageHeight="280px"
                       imageWidth="280px"
-                      className="lg:!h-[320px] lg:!w-[300px] shadow-2xl"
                       rotateAmplitude={8}
                       scaleOnHover={1.08}
                       showMobileWarning={false}
@@ -244,7 +253,7 @@ export default function Home() {
                       overlayContent={
                         <div className="backdrop-blur-lg bg-gradient-to-r from-purple-900/80 to-pink-900/80 border border-purple-400/30 py-2 px-3 rounded-2xl shadow-xl relative top-4 lg:top-6 left-3 lg:left-4 transform hover:scale-105 transition-all duration-300">
                           <h1 className="text-sm lg:text-base font-bold bg-gradient-to-r from-purple-200 via-pink-200 to-purple-200 bg-clip-text text-transparent">
-                            NBAC REPAIR SYSTEM ✨
+                            {project.name1}
                           </h1>
                         </div>
                       }
@@ -264,27 +273,24 @@ export default function Home() {
                     
                     <div className="space-y-1">
                       <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent tracking-tight">
-                        {"{"}PROJECT 1{"};"}
+                        {"{"}{project.count}{"};"}
                       </span>
                       <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-pink-300 to-purple-300 bg-clip-text text-transparent">
-                        NBAC Repair System
+                        {project.name2}
                       </span>
                     </div>
                   </div>
                   <div className="relative">
                     <div className="absolute -left-2 top-0 w-1 h-full bg-gradient-to-b from-purple-500 to-pink-500 rounded-full opacity-30"></div>
                     
-                    <p className="text-xs sm:text-sm md:text-base lg:text-base font-normal leading-relaxed text-gray-300 pl-6 lg:pl-8 relative z-10">
-                      A sophisticated system engineered for seamless computer repair reporting and equipment condition monitoring. 
-                      <span className="text-purple-300 font-medium"> Built with modern tech stack</span>, focusing on 
-                      <span className="text-pink-300 font-medium"> convenience, speed, and operational efficiency</span> 
-                      within organizational infrastructure.
+                    <p className="text-purple-300 text-xs sm:text-sm md:text-base lg:text-base font-normal leading-relaxed pl-6 lg:pl-8 relative z-10">
+                      {project.detail}
                     </p>
                   </div>
 
                   {/* Tech Stack Tags */}
                   <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
-                    {['Blade', 'Tailwind', 'DaisyUI', 'PHP', 'Laravel', 'MySQL', 'GSAP'].map((tech, index) => (
+                    {project.stack.map((tech, index) => (
                       <span key={tech} className="px-3 py-1 text-xs font-medium bg-gray-800/50 border border-purple-500/20 text-purple-200 rounded-full hover:bg-purple-500/10 transition-colors duration-300">
                         {tech}
                       </span>
@@ -303,19 +309,12 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
                     </Link>
-                    
-                    <button className="px-6 py-3 bg-transparent border border-purple-500/30 text-purple-300 hover:bg-purple-500/10 hover:border-purple-400/50 rounded-2xl transition-all duration-300 font-medium flex justify-center items-center gap-2 text-sm md:text-base group">
-                      <span>Live Demo</span>
-                      <svg className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                    </button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          {/* ------------------ */}    
+          ))}
         </div>
         </div>
     </section>
