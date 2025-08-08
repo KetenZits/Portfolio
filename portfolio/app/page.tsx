@@ -254,7 +254,7 @@ export default function Home() {
       </div>
       </div>
     </section>
-    <div style={{ width: '100%', height: '100%', position: 'absolute' }}>
+    <div style={{ width: '100%', height: '100%', position: 'absolute' }} id="project">
         <Particles
           particleColors={['#ffffff', '#8800C9']}
           particleCount={1000}
@@ -265,7 +265,7 @@ export default function Home() {
           disableRotation={false}
         />
       </div>
-    <section className="mt-3 flex flex-col items-center justify-center gap-4 md:py-10 h-auto bg-black" id="project">
+    <section className="mt-3 flex flex-col items-center justify-center gap-4 md:py-10 h-auto bg-black" >
         <div className="container mx-auto text-center z-50 flex flex-col items-center justify-center">
           <TextType 
           text={["MY ALL", "PROJECTS"]}
