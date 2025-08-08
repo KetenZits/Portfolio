@@ -39,25 +39,25 @@ export default function RootLayout({
     {
       name: 'GitHub',
       icon: Github,
-      url: 'https://github.com/yourusername',
+      url: 'https://github.com/KetenZits',
       hoverColor: 'hover:text-purple-400'
     },
     {
       name: 'Facebook',
       icon: Facebook,
-      url: 'https://facebook.com/yourprofile',
+      url: 'https://www.facebook.com/first.t.thanapon.n?locale=th_TH',
       hoverColor: 'hover:text-purple-400'
     },
     {
       name: 'Instagram',
       icon: Instagram,
-      url: 'https://instagram.com/yourusername',
+      url: 'https://www.instagram.com/karasumi_zz/',
       hoverColor: 'hover:text-purple-400'
     },
     {
       name: 'Email',
       icon: Mail,
-      url: 'mailto:your.email@example.com',
+      url: 'firstthanapon2@gmail.com',
       hoverColor: 'hover:text-purple-400'
     }
   ];
