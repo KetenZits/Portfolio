@@ -383,7 +383,7 @@ export default function Home() {
       <div className="container mx-auto text-center z-50 flex flex-col items-center justify-center">
         <BlurText
           text="{LET'S CONNECT ME};"
-          delay={150}
+          delay={350}
           animateBy="words"
           direction="top"
           className="text-4xl sm:text-4xl md:text-6xl font-bold text-white text-center mb-8"
